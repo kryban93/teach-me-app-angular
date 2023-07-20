@@ -1,1 +1,8 @@
-<p>buttopn works!</p>
+<button *ngIf="!isLink" class="button" [class]="">{{ buttonText }}</button>
+<a
+  *ngIf="isLink"
+  [routerLink]="routerLink"
+  class="button"
+  [class.button--secondary]="variant === 'secondary'"
+  >{{ buttonText }}</a
+>

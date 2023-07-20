@@ -7,9 +7,10 @@ import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { HomeComponent } from './views/home/home.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, SignupComponent, HomeComponent],
+  declarations: [AppComponent, ButtonComponent, LoginComponent, SignupComponent, HomeComponent, NavComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
