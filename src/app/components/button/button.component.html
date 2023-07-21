@@ -1,4 +1,10 @@
-<button *ngIf="!isLink" class="button" [class]="">{{ buttonText }}</button>
+<button
+  *ngIf="!isLink"
+  class="button"
+  [class.button--secondary]="variant === 'secondary'"
+>
+  {{ buttonText }}
+</button>
 <a
   *ngIf="isLink"
   [routerLink]="routerLink"

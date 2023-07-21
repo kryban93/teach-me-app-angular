@@ -18,4 +18,18 @@ describe('ButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have set secondary variant', () => {
+    component.variant = 'secondary';
+    const button = document.getElementsByClassName('.button--secondary');
+    expect(button).toBeTruthy();
+  });
+
+  it('should render anchor element when it is and link, with proper href', () => {
+    component.routerLink = 'test';
+    const anchor = document.querySelector('a');
+
+    expect(component.routerLink).toBe('test');
+    expect(anchor).toBeTruthy();
+  });
 });
