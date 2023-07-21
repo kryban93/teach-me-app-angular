@@ -1,0 +1,10 @@
+<div [id]="name + '_wrapper'" class="input__wrapper">
+  <label [htmlFor]="name" class="input__label">{{ label }}</label>
+  <input
+    [id]="name"
+    [name]="name"
+    [placeholder]="placeholder || ''"
+    [type]="type"
+    class="input"
+  />
+</div>

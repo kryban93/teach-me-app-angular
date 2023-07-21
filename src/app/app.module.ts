@@ -8,9 +8,10 @@ import { LoginComponent } from './views/login/login.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { HomeComponent } from './views/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, SignupComponent, HomeComponent, NavComponent],
+  declarations: [AppComponent, ButtonComponent, LoginComponent, SignupComponent, HomeComponent, NavComponent, InputComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

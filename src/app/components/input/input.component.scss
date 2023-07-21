@@ -1,0 +1,18 @@
+@import "../../styles/variables.scss";
+
+.input {
+  border: 0.5px solid $color-secondary;
+  border-radius: 2px;
+  width: 250px;
+  font-size: $font-size-md;
+  color: $color-primary;
+
+  &:focus {
+    outline: 1.5px solid $color-secondary;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}

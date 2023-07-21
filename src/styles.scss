@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./app/styles/reset.scss";
+@import "./app/styles/variables.scss";
+
+html,
+* {
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: $font-size-xxxl;
+}
+
+h2 {
+  font-size: $font-size-xxl;
+}
