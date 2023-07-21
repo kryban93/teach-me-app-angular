@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class InputComponent {
   @Input() label: string;
-  @Input() type: 'text' | 'number' | 'password' = 'text';
+  @Input() type: 'text' | 'number' | 'password' | 'email' = 'text';
   @Input() name: string;
   @Input() placeholder: string;
 }
