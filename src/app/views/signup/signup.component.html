@@ -4,9 +4,27 @@
       <h1>Hello!</h1>
       <h2>Signup to start your learning journey!</h2>
     </div>
-    <app-input name="email" label="Email" type="email"></app-input>
-    <app-input name="name" label="Name"></app-input>
-    <app-input name="password" type="password" label="Password"></app-input>
+    <app-input
+      name="email"
+      label="Email"
+      type="email"
+      inputId="email_input"
+      [formControl]="email"
+    ></app-input>
+    <app-input
+      name="name"
+      label="Name"
+      inputId="name_input"
+      type="text"
+      [formControl]="name"
+    ></app-input>
+    <app-input
+      name="password"
+      type="password"
+      label="Password"
+      inputId="password_input"
+      [formControl]="password"
+    ></app-input>
     <app-button text="Signup" variant="secondary"></app-button>
   </form>
 </div>

@@ -4,8 +4,20 @@
       <h1>Hello!</h1>
       <h2>Login to start your learning journey!</h2>
     </div>
-    <app-input name="email" label="Email" type="email"></app-input>
-    <app-input name="password" type="password" label="Password"></app-input>
+    <app-input
+      inputId="email_input"
+      name="email"
+      label="Email"
+      type="email"
+      [formControl]="email"
+    ></app-input>
+    <app-input
+      inputId="password_input"
+      name="password"
+      type="password"
+      label="Password"
+      [formControl]="password"
+    ></app-input>
     <app-button text="Login"></app-button>
   </form>
 </div>

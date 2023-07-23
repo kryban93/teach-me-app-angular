@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
 import { InputComponent } from 'src/app/components/input/input.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -11,6 +12,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [LoginComponent, InputComponent, ButtonComponent],
+      imports: [ReactiveFormsModule, FormsModule],
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
@@ -20,4 +22,6 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('');
 });

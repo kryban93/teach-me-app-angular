@@ -9,10 +9,6 @@ export class ButtonComponent {
   public buttonText = '';
   public routerLink = '';
 
-  ngOnChanges() {
-    console.log(this.routerLink);
-  }
-
   @Input() isLink: boolean;
   @Input() variant: 'primary' | 'secondary';
 

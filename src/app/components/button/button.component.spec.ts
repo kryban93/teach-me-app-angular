@@ -21,7 +21,9 @@ describe('ButtonComponent', () => {
 
   it('should have set secondary variant', () => {
     component.variant = 'secondary';
+    component.buttonText = 'text';
     const button = document.getElementsByClassName('.button--secondary');
+    console.log(button);
     expect(button).toBeTruthy();
   });
 

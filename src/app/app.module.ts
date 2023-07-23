@@ -9,11 +9,30 @@ import { SignupComponent } from './views/signup/signup.component';
 import { HomeComponent } from './views/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { InputComponent } from './components/input/input.component';
+import { httpInterceptorProviders } from './helpers/http.interceptor';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlValueAccessorDirective } from './directives/control-value-accessor.directive';
 
 @NgModule({
-  declarations: [AppComponent, ButtonComponent, LoginComponent, SignupComponent, HomeComponent, NavComponent, InputComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
+  declarations: [
+    AppComponent,
+    ButtonComponent,
+    LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    NavComponent,
+    InputComponent,
+    ControlValueAccessorDirective,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
