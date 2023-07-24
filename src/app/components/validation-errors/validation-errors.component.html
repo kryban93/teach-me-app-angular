@@ -1,0 +1,5 @@
+<ul class="errors__list">
+  <li class="errors__element" *ngFor="let error of errors | keyvalue">
+    {{ errorMessages[error.key] }}
+  </li>
+</ul>

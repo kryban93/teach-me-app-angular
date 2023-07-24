@@ -3,13 +3,25 @@
 .input {
   border: 0.5px solid $color-secondary;
   border-radius: 2px;
-  width: 250px;
   font-size: $font-size-md;
   color: $color-primary;
   box-sizing: border-box;
+  width: 250px;
+
+  &--invalid {
+    border: 1.5px solid $color-warning;
+  }
 
   &__label {
-    margin-bottom: 5px;
+    margin-bottom: $spacing-xxs;
+
+    &--required {
+      &::after {
+        content: "*";
+        color: $color-warning;
+        margin-left: $spacing-xxxs;
+      }
+    }
   }
 
   &:focus {
@@ -19,5 +31,6 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
+    max-width: 250px;
   }
 }

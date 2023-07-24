@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.errors {
+  &__element {
+    font-size: $font-size-sm;
+    color: $color-warning;
+  }
+
+  &__list {
+    margin: $spacing-xxs 0px;
+  }
+}

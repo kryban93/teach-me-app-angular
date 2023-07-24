@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InputComponent } from './input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidationErrorsComponent } from '../validation-errors/validation-errors.component';
 
 describe('InputComponent', () => {
   let component: InputComponent<any>;
@@ -9,7 +10,7 @@ describe('InputComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InputComponent],
+      declarations: [InputComponent, ValidationErrorsComponent],
       imports: [ReactiveFormsModule, FormsModule],
     });
     fixture = TestBed.createComponent(InputComponent);
@@ -24,6 +25,7 @@ describe('InputComponent', () => {
   it('should display valid input with label', () => {
     component.label = 'text';
     component.type = 'text';
+    component.inputId = 'test';
     const input = document.querySelector('.input__wrapper');
     console.log(input);
 

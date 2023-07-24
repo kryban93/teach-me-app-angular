@@ -1,8 +1,19 @@
 <div *ngIf="control" class="input__wrapper">
-  <label [htmlFor]="inputId" *ngIf="label" class="input__label">{{
-    label
-  }}</label>
-  <input [formControl]="control" [id]="inputId" [type]="type" class="input" />
+  <label
+    [htmlFor]="inputId"
+    *ngIf="label"
+    class="input__label"
+    [class.input__label--required]="isRequired"
+    >{{ label }}</label
+  >
+  <input
+    [required]="isRequired"
+    [formControl]="control"
+    [id]="inputId"
+    [type]="type"
+    class="input"
+    [class.input--invalid]="control.invalid"
+  />
 
-  {{ control.errors | json }}
+  <app-validation-errors [errors]="control.errors"> </app-validation-errors>
 </div>
