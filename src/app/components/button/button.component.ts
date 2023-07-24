@@ -6,35 +6,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent {
-  public buttonText = '';
-  public routerLink = '';
-
   @Input() isLink: boolean;
   @Input() variant: 'primary' | 'secondary';
-
-  @Input()
-  set link(temp: string) {
-    this.routerLink = temp;
-  }
-  get temp(): string {
-    return this.routerLink;
-  }
-
-  @Input()
-  set text(name: string) {
-    this.buttonText = name.toUpperCase();
-  }
-  get name(): string {
-    return this.buttonText;
-  }
-
+  @Input() routerLink: string = '';
+  @Input() text: string = '';
   @Input() type: string = 'button';
-  @Output() btnClick = new EventEmitter();
   @Input() isDisabled = false;
+
+  @Output() btnClick = new EventEmitter();
 
   constructor() {}
 
-  onClick() {
+  public onClick() {
+    console.log('click');
     this.btnClick.emit();
   }
 }

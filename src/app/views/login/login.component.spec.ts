@@ -5,6 +5,7 @@ import { InputComponent } from 'src/app/components/input/input.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ValidationErrorsComponent } from 'src/app/components/validation-errors/validation-errors.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -18,7 +19,7 @@ describe('LoginComponent', () => {
         ButtonComponent,
         ValidationErrorsComponent,
       ],
-      imports: [ReactiveFormsModule, FormsModule],
+      imports: [ReactiveFormsModule, FormsModule, HttpClientTestingModule],
     });
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;

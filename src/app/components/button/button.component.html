@@ -2,13 +2,15 @@
   *ngIf="!isLink"
   class="button"
   [class.button--secondary]="variant === 'secondary'"
+  (click)="onClick()"
+  [type]="type"
 >
-  {{ buttonText }}
+  {{ text }}
 </button>
 <a
   *ngIf="isLink"
   [routerLink]="routerLink"
   class="button"
   [class.button--secondary]="variant === 'secondary'"
-  >{{ buttonText }}</a
+  >{{ text }}</a
 >
