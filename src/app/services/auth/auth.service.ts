@@ -1,31 +1,39 @@
 import { Injectable } from '@angular/core';
 import { LoginRequestData, SignupRequestData } from './auth.types';
-import { Observable } from 'rxjs';
+import { Observable, catchError, tap, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { endpoints } from '../endpoints';
-
-const httpOptions = {
-  headers: new HttpHeaders()
-    .set('content-type', 'application/json')
-    .set('Access-Control-Allow-Origin', '*')
-    .set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'),
-  withCredentials: true,
-};
+import { AuthTokenService } from '../auth-token/auth-token.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private authTokenService: AuthTokenService
+  ) {}
 
   public login(user: LoginRequestData): Observable<any> {
-    return this.http.post(endpoints.LOGIN, user, httpOptions);
+    // const test = this.http
+    //   .post(endpoints.LOGIN, user, httpOptions)
+    //   .pipe(tap(), catchError(this.handleError));
+
+    // console.log(test);
+    // return test;
+    const test = this.http.post(endpoints.LOGIN, user);
+    console.log(test);
+    return test;
   }
 
-  public signup(user: SignupRequestData): void {
-    const test = this.http
-      .post(endpoints.SIGNUP, user, httpOptions)
-      .subscribe((response) => response);
+  public signup(user: SignupRequestData): Observable<any> {
+    const test = this.http.post(endpoints.SIGNUP, user);
+
     console.log(test);
+    return test;
+  }
+
+  public logout() {
+    this.authTokenService.clear();
   }
 }

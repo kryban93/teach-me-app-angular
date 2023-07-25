@@ -1,5 +1,5 @@
 <div class="form__wrapper">
-  <form action="" class="form">
+  <form action="" class="form" [formGroup]="formGroup" (submit)="submit()">
     <div class="form__heading">
       <h1>Hello!</h1>
       <h2>Login to start your learning journey!</h2>
@@ -9,15 +9,15 @@
       name="email"
       label="Email"
       type="email"
-      [formControl]="email"
+      formControlName="username"
     ></app-input>
     <app-input
       inputId="password_input"
       name="password"
       type="password"
       label="Password"
-      [formControl]="password"
+      formControlName="password"
     ></app-input>
-    <app-button text="Login"></app-button>
+    <app-button text="Login" (btnClick)="submit()"></app-button>
   </form>
 </div>

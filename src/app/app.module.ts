@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ControlValueAccessorDirective } from './directives/control-value-accessor.directive';
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 import { SelectComponent } from './components/select/select.component';
+import { BoardComponent } from './views/board/board.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SelectComponent } from './components/select/select.component';
     ControlValueAccessorDirective,
     ValidationErrorsComponent,
     SelectComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,

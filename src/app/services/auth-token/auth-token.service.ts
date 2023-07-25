@@ -27,4 +27,12 @@ export class AuthTokenService {
 
     return JSON.parse(token);
   }
+
+  public isLoggedIn(): boolean {
+    const user = window.sessionStorage.getItem(this.USER_KEY);
+    if (user) {
+      return true;
+    }
+    return false;
+  }
 }

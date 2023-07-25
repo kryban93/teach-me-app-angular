@@ -1,12 +1,12 @@
 export interface LoginRequestData {
-  login: string;
+  username: string;
   password: string;
 }
 
 export interface SignupRequestData {
-  login: string;
+  email: string;
   password: string;
-  name: string;
+  username: string;
 }
 
 export interface LoginResponseData {
