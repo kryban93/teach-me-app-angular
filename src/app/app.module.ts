@@ -16,6 +16,9 @@ import { ControlValueAccessorDirective } from './directives/control-value-access
 import { ValidationErrorsComponent } from './components/validation-errors/validation-errors.component';
 import { SelectComponent } from './components/select/select.component';
 import { BoardComponent } from './views/board/board.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { OffersComponent } from './views/offers/offers.component';
+import { OfferFormComponent } from './components/offer-form/offer-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { BoardComponent } from './views/board/board.component';
     ValidationErrorsComponent,
     SelectComponent,
     BoardComponent,
+    ProfileComponent,
+    OffersComponent,
+    OfferFormComponent,
   ],
   imports: [
     BrowserModule,

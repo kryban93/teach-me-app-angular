@@ -31,4 +31,11 @@ describe('SignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should properly display signup component', () => {
+    const signupForm =
+      fixture.debugElement.nativeElement.querySelector('.form__wrapper');
+
+    console.log(signupForm);
+  });
 });
