@@ -19,6 +19,7 @@ import { BoardComponent } from './views/board/board.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { OffersComponent } from './views/offers/offers.component';
 import { OfferFormComponent } from './components/offer-form/offer-form.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { OfferFormComponent } from './components/offer-form/offer-form.component
     ProfileComponent,
     OffersComponent,
     OfferFormComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
