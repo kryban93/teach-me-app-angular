@@ -22,13 +22,39 @@ describe('InputComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display valid input with label', () => {
-    component.label = 'text';
+  it('should set input type to text', () => {
     component.type = 'text';
-    component.inputId = 'test';
-    const input = document.querySelector('.input__wrapper');
-    console.log(input);
+    fixture.detectChanges();
+    const input =
+      fixture.debugElement.nativeElement.querySelector('input[type="text"]');
 
     expect(input).toBeTruthy();
   });
+
+  it('should set input type to text', () => {
+    component.type = 'textarea';
+    fixture.detectChanges();
+    const input = fixture.debugElement.nativeElement.querySelector(
+      'input[type="textarea"]'
+    );
+
+    expect(input).toBeTruthy();
+  });
+
+  it('should display proper label', () => {
+    component.label = 'Label';
+    fixture.detectChanges();
+    const label =
+      fixture.debugElement.nativeElement.querySelector('.input__label');
+    expect(label.innerHTML).toBe('Label');
+  });
+
+  // it('should dispaly proper input value', () => {
+  //   const input = fixture.debugElement.nativeElement.querySelector('.input');
+  //   const text = 'some text value';
+  //   input.value = text;
+  //   fixture.detectChanges();
+
+  //   expect(component.control?.value).toBe(text);
+  // });
 });

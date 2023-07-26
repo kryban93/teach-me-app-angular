@@ -20,12 +20,12 @@ describe('AuthService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('test something', () => {
-    const userData = {
-      username: 'username',
-      password: 'password',
-    };
-    const test = service.login(userData);
-    console.log(test);
-  });
+  // it('test something', () => {
+  //   const userData = {
+  //     username: 'username',
+  //     password: 'password',
+  //   };
+  //   const test = service.login(userData).subscribe((data) => data);
+  //   console.log('login response', +test);
+  // });
 });

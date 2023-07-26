@@ -10,6 +10,7 @@ import {
 } from '@angular/common/http';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { AuthTokenService } from '../services/auth-token/auth-token.service';
+import { endpoints } from '../services/endpoints';
 
 @Injectable()
 export class HttpRequestInterceptor implements HttpInterceptor {
@@ -19,9 +20,12 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     req: HttpRequest<undefined>,
     next: HttpHandler
   ): Observable<HttpEvent<undefined>> {
+    console.log('run interceptor');
     const isLoggedIn = this.authTokenService.isLoggedIn();
-    if (isLoggedIn) {
+    console.log(req.url);
+    if (isLoggedIn && req.url !== (endpoints.LOGIN || endpoints.SIGNUP)) {
       const token = this.authTokenService.getToken();
+      console.log('set headers if logged on: ' + token?.accessToken);
 
       req = req.clone({
         headers: new HttpHeaders()
@@ -32,6 +36,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
         withCredentials: true,
       });
     } else {
+      console.log('set headers if not logged');
       req = req.clone({
         headers: new HttpHeaders()
           .set('content-type', 'application/json')

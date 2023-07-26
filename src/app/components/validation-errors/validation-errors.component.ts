@@ -9,9 +9,7 @@ import { ValidationErrors } from '@angular/forms';
 export class ValidationErrorsComponent implements OnInit {
   @Input() errors: Record<string, ValidationErrors> | null = {};
 
-  ngOnInit(): void {
-    console.log(this.errors);
-  }
+  ngOnInit(): void {}
 
   errorMessages: Record<string, string> = {
     required: 'This value is required',

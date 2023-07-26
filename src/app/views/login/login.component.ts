@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    console.log('submit login');
     this.authService.login(this.formGroup.value).subscribe({
       next: (data) => {
         this.authTokenService.saveToken(data);

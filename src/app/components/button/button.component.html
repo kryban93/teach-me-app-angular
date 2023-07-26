@@ -2,8 +2,10 @@
   *ngIf="!isLink"
   class="button"
   [class.button--secondary]="variant === 'secondary'"
+  [class.button--disabled]="isDisabled"
   (click)="onClick()"
   [type]="type"
+  [disabled]="isDisabled"
 >
   {{ text }}
 </button>
@@ -12,5 +14,6 @@
   [routerLink]="routerLink"
   class="button"
   [class.button--secondary]="variant === 'secondary'"
+  [class.button--disabled]="isDisabled"
   >{{ text }}</a
 >
