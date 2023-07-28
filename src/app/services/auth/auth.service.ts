@@ -27,6 +27,7 @@ export class AuthService {
   }
 
   public signup(user: SignupRequestData): Observable<any> {
+    this.authTokenService.clear();
     const test = this.http.post(endpoints.SIGNUP, user);
 
     console.log(test);

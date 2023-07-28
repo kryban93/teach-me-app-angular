@@ -9,6 +9,14 @@
       routerLink="signup"
       variant="secondary"
     ></app-button>
-    <app-button text="Login" [isLink]="true" routerLink="login"></app-button>
+    <app-button
+      *ngIf="!isLoggedIn; else second"
+      text="Login"
+      [isLink]="true"
+      routerLink="login"
+    ></app-button>
+    <ng-template #second>
+      <app-button text="Logout" (btnClick)="logout()"></app-button>
+    </ng-template>
   </div>
 </nav>

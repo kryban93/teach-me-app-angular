@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-board',
@@ -7,7 +8,10 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent {
-  constructor(private categoriesServices: CategoriesService) {}
+  constructor(
+    private categoriesServices: CategoriesService,
+    private userService: UserService
+  ) {}
 
   public getCategories() {
     const categories = this.categoriesServices
@@ -15,5 +19,10 @@ export class BoardComponent {
       .subscribe((data) => data);
 
     console.log(categories);
+  }
+
+  public getUsers() {
+    const users = this.userService.getUsers().subscribe((data) => data);
+    console.log(users);
   }
 }

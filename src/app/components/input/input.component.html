@@ -7,6 +7,7 @@
     >{{ label }}</label
   >
   <input
+    *ngIf="type !== 'textarea'"
     [required]="isRequired"
     [formControl]="control"
     [id]="inputId"
@@ -14,6 +15,14 @@
     class="input"
     [class.input--invalid]="control.invalid"
   />
+  <textarea
+    *ngIf="type === 'textarea'"
+    [required]="isRequired"
+    [formControl]="control"
+    [id]="inputId"
+    class="input"
+    [class.input--invalid]="control.invalid"
+  ></textarea>
 
   <app-validation-errors [errors]="control.errors"> </app-validation-errors>
 </div>

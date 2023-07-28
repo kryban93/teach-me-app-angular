@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 .button {
+  margin: 0;
   padding: 5px 30px;
   border: 1px solid $color-secondary;
   border-radius: 2px;
@@ -9,6 +10,7 @@
   display: inline-block;
   background: none;
   font-size: $font-size-lg;
+  line-height: $font-size-lg * 1.1;
 
   &--secondary {
     background: $color-secondary;
