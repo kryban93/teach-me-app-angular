@@ -23,7 +23,6 @@ describe('InputComponent', () => {
   });
 
   it('should set input type to text', () => {
-    component.type = 'text';
     fixture.detectChanges();
     const input =
       fixture.debugElement.nativeElement.querySelector('input[type="text"]');
@@ -31,12 +30,10 @@ describe('InputComponent', () => {
     expect(input).toBeTruthy();
   });
 
-  it('should set input type to text', () => {
+  it('should set input type to textarea', () => {
     component.type = 'textarea';
     fixture.detectChanges();
-    const input = fixture.debugElement.nativeElement.querySelector(
-      'input[type="textarea"]'
-    );
+    const input = fixture.debugElement.nativeElement.querySelector('textarea');
 
     expect(input).toBeTruthy();
   });
@@ -49,12 +46,13 @@ describe('InputComponent', () => {
     expect(label.innerHTML).toBe('Label');
   });
 
-  // it('should dispaly proper input value', () => {
-  //   const input = fixture.debugElement.nativeElement.querySelector('.input');
-  //   const text = 'some text value';
-  //   input.value = text;
-  //   fixture.detectChanges();
+  it('should dispaly proper input value', () => {
+    const input = fixture.debugElement.nativeElement.querySelector('.input');
+    const text = 'some text value';
+    input.value = text;
+    input.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
 
-  //   expect(component.control?.value).toBe(text);
-  // });
+    expect(component.control?.value).toBe(text);
+  });
 });

@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 import { CategoriesType } from 'src/app/services/categories/categories.types';
 import { OfferService } from 'src/app/services/offer/offer.service';
-import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-offer-form',
