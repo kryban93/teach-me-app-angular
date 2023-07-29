@@ -1,10 +1,16 @@
 <section>
   <h1>Welcome!</h1>
-  <app-offer-list></app-offer-list>
-  <app-offer-form> </app-offer-form>
-
   <div>
-    <button (click)="getCategories()">click</button>
-    <button (click)="getUsers()">click</button>
+    <app-button
+      text="Create an offer"
+      variant="secondary"
+      (btnClick)="openOfferFormModal()"
+    ></app-button>
   </div>
+
+  <app-offer-list></app-offer-list>
 </section>
+
+<app-modal id="offer-form-modal">
+  <app-offer-form> </app-offer-form>
+</app-modal>

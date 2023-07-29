@@ -9,6 +9,7 @@ import { ValidationErrorsComponent } from 'src/app/components/validation-errors/
 import { ReactiveFormsModule } from '@angular/forms';
 import { OfferListComponent } from 'src/app/components/offer-list/offer-list.component';
 import { OfferListItemComponent } from 'src/app/components/offer-list-item/offer-list-item.component';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 describe('BoardComponent', () => {
   let component: BoardComponent;
@@ -24,6 +25,7 @@ describe('BoardComponent', () => {
         ValidationErrorsComponent,
         OfferListComponent,
         OfferListItemComponent,
+        ModalComponent,
       ],
       imports: [HttpClientTestingModule, ReactiveFormsModule],
     });

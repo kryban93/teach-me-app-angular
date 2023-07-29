@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class SignupComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.formGroup = new FormGroup({
@@ -25,7 +26,11 @@ export class SignupComponent implements OnInit {
   }
 
   submit() {
+    if (!this.formGroup.valid) {
+      return;
+    }
     this.authService.signup(this.formGroup.value).subscribe((response) => {
+      this.router.navigate(['/login']);
       return undefined;
     });
   }

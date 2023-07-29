@@ -1,0 +1,14 @@
+@mixin signup-background {
+  background-image: url("../../../assets/signup-background.svg");
+  background-repeat: no-repeat;
+  background-position: bottom 10px right;
+  background-size: 50%;
+
+  @media screen and (min-width: 767px) {
+    background-size: 40%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    background-size: 40%;
+  }
+}
