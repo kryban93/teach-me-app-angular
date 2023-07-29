@@ -20,6 +20,8 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { OffersComponent } from './views/offers/offers.component';
 import { OfferFormComponent } from './components/offer-form/offer-form.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { OfferListComponent } from './components/offer-list/offer-list.component';
+import { OfferListItemComponent } from './components/offer-list-item/offer-list-item.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { ModalComponent } from './components/modal/modal.component';
     OffersComponent,
     OfferFormComponent,
     ModalComponent,
+    OfferListComponent,
+    OfferListItemComponent,
   ],
   imports: [
     BrowserModule,

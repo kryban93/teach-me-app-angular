@@ -6,4 +6,5 @@ export const endpoints = {
   USERS: `${BASE_URL}/users`,
   PROFILE: `${BASE_URL}/profile`,
   OFFER: `${BASE_URL}/offer`,
+  OFFERS: `${BASE_URL}/offers`,
 };

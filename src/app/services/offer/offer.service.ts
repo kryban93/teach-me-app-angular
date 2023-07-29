@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap, catchError, throwError } from 'rxjs';
 import { OfferFormTypes } from 'src/app/components/offer-form/offer-form.types';
 import { UserService } from '../user/user.service';
-import { OfferRequest } from './offer.types';
+import { Offer, OfferRequest } from './offer.types';
 import { endpoints } from '../endpoints';
 
 @Injectable({
@@ -11,8 +11,16 @@ import { endpoints } from '../endpoints';
 })
 export class OfferService {
   constructor(private http: HttpClient, private userService: UserService) {}
+  private handleError(error: any) {
+    console.error(error);
+    return throwError(() => new Error(error));
+  }
 
-  getOffers() {}
+  getOffers() {
+    return this.http
+      .get<Offer[]>(endpoints.OFFERS)
+      .pipe(tap(), catchError(this.handleError));
+  }
 
   getOfferDetails() {}
 

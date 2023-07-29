@@ -1,0 +1,8 @@
+<p>offer-list works!</p>
+<div class="list__wrapper">
+  <app-offer-list-item
+    [offer]="offer"
+    [index]="i"
+    *ngFor="let offer of offers; let i = index"
+  ></app-offer-list-item>
+</div>

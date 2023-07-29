@@ -7,6 +7,8 @@ import { InputComponent } from 'src/app/components/input/input.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { ValidationErrorsComponent } from 'src/app/components/validation-errors/validation-errors.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OfferListComponent } from 'src/app/components/offer-list/offer-list.component';
+import { OfferListItemComponent } from 'src/app/components/offer-list-item/offer-list-item.component';
 
 describe('BoardComponent', () => {
   let component: BoardComponent;
@@ -20,6 +22,8 @@ describe('BoardComponent', () => {
         InputComponent,
         ButtonComponent,
         ValidationErrorsComponent,
+        OfferListComponent,
+        OfferListItemComponent,
       ],
       imports: [HttpClientTestingModule, ReactiveFormsModule],
     });
